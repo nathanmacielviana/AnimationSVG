@@ -1,0 +1,22 @@
+body
+{
+    background: #0d0e0f;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+svg{display: block; max-width: 960px;}
+
+/*caminho svg*/
+#assinatura
+{
+    stroke-dasharray: 272; /*padrão traçado no caminho*/
+    stroke-dashoffset: 272; 
+    animation: assinatura 4s forwards; /*aplica a animação com 4s de duração, pode-se colocar atributo infinite para fazer loop*/
+}
+
+@keyframes assinatura
+{
+    to{stroke-dashoffset: 0;} /*traço do caminho apareça gradualmente*/
+}
