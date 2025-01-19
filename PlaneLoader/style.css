@@ -1,0 +1,37 @@
+body{background-color: #0562dc;}
+
+.loader
+{
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: auto;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(100px, 100px);
+	width: 200px;
+}
+
+.plane
+{
+    animation: spin 3s linear infinite; /*aplica a animação spin de 3s*/ 
+	-webkit-animation: spin 3s linear infinite;
+	fill: #FFF;
+	transform-origin: 50% 50%; /*Define o ponto de origem para a rotação no centro do elemento */
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 100px 100px;
+}
+
+/* faz o elemento rotacionar de 0 a -360 graus. */
+@keyframes spin 
+{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+/*mesma rotação porém escrita de forma compativel com navegadores Webkit*/
+@-webkit-keyframes spin 
+{
+    0%{-webkit-transform: rotate(0deg);}
+    100%{-webkit-transform: rotate(-360deg);}
+}
