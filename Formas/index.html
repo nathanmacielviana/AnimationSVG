@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="startAnimation()">Iniciar</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script>
+        // Criando a forma de círculo e inserindo-a no DOM
+        const circle = new mojs.Shape({
+            shape: 'circle',
+            fill: '#F64040',
+            radius: 20,
+            isShowStart: true,
+            container: document.body  // Isso insere a forma no DOM
+        });
+
+        // Animando a forma criada
+        const animation = new mojs.Burst({
+            radius: { 0: 100 },
+            count: 5,
+            angle: { 360: 0 },
+            children: {
+                shape: 'circle',
+                fill: { '#F64040': '#FC46AD' },
+                radius: { 20: 80 },
+                duration: 2000
+            }
+        });
+
+        // Função de iniciar a animação
+        function startAnimation() {
+            // Isso faz com que o círculo seja exibido inicialmente
+            circle.replay(); // Reproduz a animação do círculo
+
+            // Isso executa a animação de "burst"
+            animation.replay();  // Reproduz a animação de explosão
+        }
+    </script>
+</body>
+</html>
