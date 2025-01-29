@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .icon {
+    width: 200px;
+}
+
+.container .icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.container .icon path {
+    fill: transparent; /* Faz com que o caminho seja vazio inicialmente */
+    stroke: #fb0165;
+    stroke-width: 100; /* Aumentei a largura da linha para torná-la mais visível */
+    stroke-dasharray: 18500; /* Ajuste esse valor com base no comprimento real do seu caminho */
+    stroke-dashoffset: 18500; /* Inicialmente invisível */
+    transition: stroke-dashoffset 2s ease;
+}
+
+/* Animação de "desenho" do caminho */
+.container .icon path {
+    animation: animado-anim 5s forwards;
+}
+
+@keyframes animado-anim {
+    0% {
+        stroke-dashoffset: 1000; /* Começa invisível */
+    }
+    100% {
+        stroke-dashoffset: 0; /* Desenha o caminho completamente */
+        fill: #fb0165;
+    }
+}
